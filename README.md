@@ -1,78 +1,110 @@
 Clustering By Density - CS221 Project
-📋 Project Overview
-This project implements a density-based clustering algorithm for analyzing network graphs, with applications in protein-protein interaction networks and other relational datasets. The algorithm identifies cohesive subgroups (clusters) within a graph based on edge density and node connectivity patterns.
+
+📋 Overview
+
+This project implements a density-based clustering algorithm for analyzing network graphs, with applications in protein-protein interaction networks and other relational datasets. It identifies cohesive subgroups (clusters) within a graph based on edge density and node connectivity patterns.
+
+🧭 Table of Contents
+
+Key Features
+
+Algorithm Details
+
+Implementation
+
+File Structure
+
+Usage
+
+Sample Output
+
+Parameters
+
+Applications
+
+Notes
+
+Future Enhancements
+
+References
 
 🎯 Key Features
-Density-Based Clustering: Finds subgraphs with density ≥ threshold value
 
-Protein Interaction Network Analysis: Designed for biological network analysis
+Density-Based Clustering: Detects subgraphs with density ≥ threshold
 
-Weighted Edge Calculation: Edge weights based on common neighbors
+Protein Interaction Network Analysis: Designed for biological networks
 
-Priority-Based Expansion: Clusters grow based on node connectivity metrics
+Weighted Edge Calculation: Based on common neighbors
+
+Priority-Based Expansion: Clusters grow via connectivity metrics
 
 Configurable Thresholds: Adjustable density and cluster property parameters
 
 📊 Algorithm Details
-The algorithm works by:
 
-Starting with the highest-weight node as initial cluster
+Start with the highest-weight node as the initial cluster.
 
-Expanding clusters by adding neighbor nodes
+Expand clusters by adding neighbor nodes.
 
-Maintaining density and cluster property constraints
+Maintain density and cluster property (cp) constraints.
 
-Iteratively processing remaining nodes
+Iteratively process remaining nodes.
 
 Key Metrics:
+
 Edge Weight: Number of common neighbors between nodes
 
 Node Weight: Sum of weights of connected edges
 
-Cluster Density: Ratio of actual edges to maximum possible edges
+Cluster Density: Actual edges ÷ maximum possible edges
 
-Cluster Property (cp): Measures node's connectivity within cluster
+Cluster Property (cp): Node connectivity within the cluster
 
 🏗️ Implementation
+
 Language: C++
 
-Data Structures: Graph representation using adjacency lists
+Data Structures: Graph represented using adjacency lists
 
 Classes: Node, Graph
 
-File Input: Reads from mydataset.txt (node1, node2, weight format)
+Input File: mydataset.txt (format: node1 node2 weight)
 
-📁 File Structure
-text
-├── main.cpp              # Main implementation
-├── mydataset.txt         # Input data file
-├── README.md            # This documentation
-└── Project_Description.pdf # Original project specifications
+
+
 🚀 Usage
-Prepare input file in format: node1 node2 weight
 
-Compile: g++ -o clustering main.cpp
+Prepare the input file in format:
 
-Run: ./clustering
+node1 node2 weight
 
-Adjust density and cp thresholds in clustering() function call
+
+Compile the program:
+
+g++ -o clustering main.cpp
+
+
+Run the executable:
+
+./clustering
+
+
+Adjust density and cluster property thresholds in the clustering() function call.
 
 📈 Sample Output
-The program displays:
 
 Original graph structure
 
-Identified clusters with their member nodes
+Identified clusters with member nodes
 
 Edge weights and connectivity information
 
-🎓 Academic Context
-Course: CS221 - Data Structures and Design
-Institution: GIK Institute
-Submission Deadline: 22-12-2023
-Project Type: Semester Project
-
+⚙️ Parameters
+Parameter	Description	Range
+thdensity	Minimum cluster density threshold	0–1
+cp	Cluster property threshold for node inclusion	0–1
 🔬 Applications
+
 Biological network analysis (protein-protein interactions)
 
 Social network community detection
@@ -81,22 +113,17 @@ Recommendation systems
 
 Data mining and pattern recognition
 
-⚙️ Parameters
-thdensity: Minimum cluster density threshold (0-1)
-
-cp: Cluster property threshold for node inclusion (0-1)
-
 📝 Notes
-The algorithm prioritizes nodes with strong intra-cluster connections
 
-Edge weights are calculated as common neighbors count (M² for u ≠ v)
+Prioritizes nodes with strong intra-cluster connections
 
-Clusters are removed from consideration once identified
+Edge weights calculated as common neighbors count (M² for u ≠ v)
 
-Implementation handles undirected simple graphs
+Clusters removed from consideration once identified
+
+Supports undirected simple graphs
 
 🛠️ Future Enhancements
-Potential improvements could include:
 
 Parallel processing for large graphs
 
@@ -109,4 +136,5 @@ Support for directed graphs
 Optimized data structures for scalability
 
 📚 References
+
 Based on density-based clustering principles and network analysis techniques commonly used in bioinformatics and data mining research.
