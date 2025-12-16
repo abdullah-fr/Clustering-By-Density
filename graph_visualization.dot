@@ -1,0 +1,10 @@
+digraph G {
+ERP2 -> ERP1 [label="0.728"];
+ERP2 -> HTA2 [label="0.58"];
+ERP2 -> HTB2 [label="0.245"];
+ERP2 -> LTE1 [label="0.017"];
+ERP2 -> TFC3 [label="0.017"];
+TFC3 -> MYO4 [label="0.014"];
+TFC3 -> SHP1 [label="0.117"];
+TFC3 -> TFC1 [label="0.989"];
+}
